@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cling Info Tech | Making Your Ideas Happen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F3F8;--card:#fff;--ink:#0B1233;--mute:#4B5478;--line:#D6DAEA;--blue:#2447F5;--sun:#FFC247;--bp:#0B1233;--grid:#1B2660;--bpink:#EAEEFF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070B22;--card:#101842;--ink:#EEF1FF;--mute:#A3ACD6;--line:#232D5E;--blue:#8DA4FF;--bp:#050819;--grid:#141C4A}}
+:root[data-theme="dark"]{--bg:#070B22;--card:#101842;--ink:#EEF1FF;--mute:#A3ACD6;--line:#232D5E;--blue:#8DA4FF;--bp:#050819;--grid:#141C4A}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;line-height:1.02;margin:0;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bp);color:var(--bpink);border-bottom:1px solid var(--grid)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.logo{font:400 26px "Instrument Serif",serif;text-decoration:none}
+.logo i{color:var(--sun)}
+nav{display:flex;gap:26px}
+nav a{text-decoration:none;font-size:15px;opacity:.8}
+nav a:hover{opacity:1}
+.btn{display:inline-block;border:0;cursor:pointer;font:700 16px "DM Sans",sans-serif;background:var(--sun);color:#0B1233;padding:13px 24px;border-radius:99px;text-decoration:none}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.hero{background:var(--bp) repeating-linear-gradient(0deg,transparent 0 39px,var(--grid) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,var(--grid) 39px 40px);color:var(--bpink);padding:64px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(48px,7.4vw,100px)}
+.hero h1 em{color:var(--sun)}
+.hero p.sub{max-width:46ch;color:#B9C3F2;font-size:19px;margin:22px 0 28px}
+.builder{background:var(--bp);border:1.5px solid #3A4A9C;border-radius:20px;padding:22px;box-shadow:8px 8px 0 var(--sun)}
+.builder h2{font-size:28px;margin-bottom:12px}
+.lab{font-size:14px;color:#9FAAE0;margin:14px 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:500 15px "DM Sans",sans-serif;color:var(--bpink);background:transparent;border:1.5px solid #3A4A9C;border-radius:99px;padding:8px 16px;cursor:pointer}
+.chip[aria-checked="true"]{background:var(--sun);border-color:var(--sun);color:#0B1233;font-weight:700}
+.prev{display:grid;grid-template-columns:130px 1fr;gap:18px;margin-top:18px;align-items:center}
+.prev svg{width:100%;height:auto;color:var(--sun)}
+.prev svg g{display:none;animation:draw .5s ease}
+.prev svg g.on{display:block}
+@keyframes draw{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.ph{display:grid;grid-template-columns:78px 1fr 34px;gap:8px;align-items:center;font-size:13px;color:#C3CCF6;margin:5px 0}
+.ph i{display:block;height:8px;border-radius:4px;background:var(--sun);transition:width .4s}
+.ph b{text-align:right;font-weight:500}
+.tot{margin-top:10px;font-size:15px;color:#fff}
+.tot small{display:block;color:#8F9BD6;font-size:12px}
+.builder .btn{margin-top:14px;width:100%;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line)}
+.stats div{padding:34px 22px 30px 0}
+.stats b{display:block;font:400 clamp(44px,6vw,72px) "Instrument Serif",serif;line-height:1;color:var(--blue)}
+.stats span{color:var(--mute);font-size:15px}
+section{padding:96px 0 0}
+h2.big{font-size:clamp(38px,5.6vw,68px);max-width:16ch}
+.lead{color:var(--mute);max-width:58ch;margin:18px 0 0}
+.rows{margin-top:40px;border-top:1.5px solid var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1.3fr;gap:30px;padding:28px 0;border-bottom:1px solid var(--line);transition:padding .25s}
+.row:hover{padding-left:14px}
+.row h3{font-size:34px}
+.row p{margin:0;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.tags span{border:1px solid var(--line);background:var(--card);padding:8px 16px;border-radius:99px;font-size:15px}
+.focus{display:grid;grid-template-columns:1.4fr 1fr;gap:18px;margin-top:40px}
+.tile{background:var(--bp);color:var(--bpink);border-radius:20px;padding:30px;min-height:230px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.tile.big{grid-row:span 2}
+.tile.alt{background:var(--blue);color:#fff}
+.tile h3{font-size:36px}
+.tile p{margin:8px 0 0;color:#C3CCF6;max-width:40ch}
+.tile svg{position:absolute;top:22px;right:22px;width:120px;color:var(--sun);opacity:.9}
+.time{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;position:relative}
+.time::before{content:"";position:absolute;left:0;right:0;top:7px;border-top:1.5px dashed var(--mute)}
+.time div{position:relative;padding:30px 20px 0 0}
+.time div::before{content:"";position:absolute;left:0;top:0;width:15px;height:15px;border-radius:50%;background:var(--sun);border:3px solid var(--bg);box-shadow:0 0 0 1.5px var(--ink)}
+.time b{font:400 40px "Instrument Serif",serif}
+.time p{margin:4px 0 0;color:var(--mute);font-size:15px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.person{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.av{width:68px;height:68px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font:400 26px "Instrument Serif",serif;margin-bottom:16px}
+.person h3{font-size:28px}.person p{margin:2px 0 0;color:var(--mute);font-size:15px}
+.contact{background:var(--bp);color:var(--bpink);border-radius:26px;padding:56px;margin-top:96px}
+.contact h2{font-size:clamp(38px,5.6vw,68px);max-width:14ch}
+.offices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:38px;padding-top:24px;border-top:1px solid var(--grid);font-size:15px;color:#B9C3F2}
+.offices b{display:block;color:#fff;margin-bottom:4px}
+footer{padding:44px 0 56px;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));background:#25D366;color:#04381F;font-weight:700;padding:12px 18px;border-radius:99px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+@media(max-width:860px){nav{display:none}.hero .wrap,.row,.focus,.team,.offices{grid-template-columns:1fr}.tile.big{grid-row:auto}
+.stats{grid-template-columns:1fr 1fr}.time{grid-template-columns:1fr 1fr;row-gap:26px}.contact{padding:34px 24px}.builder{box-shadow:5px 5px 0 var(--sun)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prev svg g,.ph i,.row{animation:none;transition:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top">Cling<i>.</i>InfoTech</a>
+<nav aria-label="Main"><a href="#services">Services</a><a href="#focus">AI &amp; 3D</a><a href="#story">Story</a><a href="#team">Team</a><a href="https://clinginfotech.com/portfolio">Portfolio</a><a href="https://clinginfotech.com/career">Careers</a></nav>
+<a class="btn" href="#contact" style="padding:9px 20px;font-size:15px">Talk to us</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Making your ideas <em>happen.</em></h1>
+<p class="sub">Websites, mobile apps, ERPs and custom portals from a team of 350+ client projects behind it. Sketch yours on the right and see how we would plan it.</p>
+<a class="btn ghost" href="https://clinginfotech.com/portfolio">See our work</a>
+</div>
+
+<div class="builder" id="builder">
+<h2>Sketch your idea</h2>
+<div class="lab" id="l1">I want to build</div>
+<div class="chips" role="radiogroup" aria-labelledby="l1" id="kind"></div>
+<div class="lab" id="l2">Where are you today?</div>
+<div class="chips" role="radiogroup" aria-labelledby="l2" id="stage"></div>
+<div class="prev">
+<svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<g data-k="Website" class="on"><rect x="6" y="10" width="108" height="80" rx="6"/><path d="M6 26h108M16 18h.1M24 18h.1M32 18h.1M18 40h50M18 52h34M18 64h44M78 40h26v26H78z"/></g>
+<g data-k="Mobile app"><rect x="34" y="4" width="52" height="92" rx="9"/><path d="M50 12h20M44 30h32v22H44zM44 62h32M44 72h22M54 86h12"/></g>
+<g data-k="ERP"><rect x="6" y="10" width="108" height="80" rx="6"/><path d="M6 26h108M32 26v64M42 78V58M58 78V44M74 78V52M90 78V36"/></g>
+<g data-k="AI vision"><path d="M6 24V10h14M100 10h14v14M114 76v14h-14M20 90H6V76"/><circle cx="60" cy="42" r="12"/><path d="M36 82c2-16 12-22 24-22s22 6 24 22"/><rect x="42" y="24" width="36" height="42" rx="3" stroke-dasharray="4 4"/></g>
+</svg>
+<div id="plan"></div>
+</div>
+<div class="tot" id="tot"></div>
+<a class="btn" id="go" href="#contact">Send this plan to Cling</a>
+</div>
+</div></div>
+
+<div class="wrap">
+<div class="stats">
+<div><b>350+</b><span>Happy clients</span></div>
+<div><b>390+</b><span>Projects completed</span></div>
+<div><b>32M+</b><span>Lines of code written</span></div>
+<div><b>1500+</b><span>Coffees with clients</span></div>
+</div>
+
+<section id="services">
+<h2 class="big">Built from scratch, never from a template.</h2>
+<p class="lead">Every design layout is developed from the ground up to your standards.</p>
+<div class="rows">
+<div class="row"><h3>App development</h3><p>Custom mobile apps that reach the fastest-growing audience online.</p></div>
+<div class="row"><h3>Web design</h3><p>Original layouts, fast pages and clear calls to action, so your site is more than another URL.</p></div>
+<div class="row"><h3>ERP systems</h3><p>One system that joins your back-office and front-office tools so your team runs work in one place.</p></div>
+</div>
+<div class="tags"><span>Digital marketing</span><span>Social media marketing</span><span>Custom web portals</span><span>IT team for entrepreneurs</span><span>Career counselling</span></div>
+</section>
+
+<section id="focus">
+<h2 class="big">Where we are experimenting.</h2>
+<div class="focus">
+<div class="tile big"><svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 24V10h14M100 10h14v14M114 76v14h-14M20 90H6V76"/><rect x="42" y="24" width="36" height="42" rx="3" stroke-dasharray="4 4"/></svg><h3>AI surveillance model</h3><p>Computer vision that spots suspicious activity in video and flags it for a person to review.</p><p><a href="https://clinginfotech.com/ai">Explore AI/ML</a></p></div>
+<div class="tile alt"><h3>3D animation</h3><p>Logo reveals and product adverts. <a href="https://clinginfotech.com/video3d">Watch the reel</a></p></div>
+<div class="tile"><h3>Domains we serve</h3><p>Industry knowledge, not just code. <a href="https://clinginfotech.com/domains-we-serve">See industries</a></p></div>
+</div></section>
+
+<section id="story">
+<h2 class="big">Four years of steady growth.</h2>
+<p class="lead">Our vision is premier design, development and marketing that helps clients grow profitably online, backed by continued investment in people, process and current technology.</p>
+<div class="time">
+<div><b>2019</b><p>Foundations: identity and lessons.</p></div>
+<div><b>2020</b><p>Wider services, same quality.</p></div>
+<div><b>2021</b><p>New clients and new technologies.</p></div>
+<div><b>2022</b><p>A mature company, ambitious projects.</p></div>
+</div></section>
+
+<section id="team">
+<h2 class="big">Leadership.</h2>
+<div class="team">
+<div class="person"><div class="av">RS</div><h3>Ramesh Singh</h3><p>Co-founder &amp; Director</p></div>
+<div class="person"><div class="av">AG</div><h3>Ashi Gupta</h3><p>Managing Director</p></div>
+<div class="person"><div class="av">AG</div><h3>Akshay Gupta</h3><p>CEO</p></div>
+</div></section>
+
+<div class="contact" id="contact">
+<h2>Tell us your idea.</h2>
+<p style="max-width:52ch;margin:16px 0 26px;color:#B9C3F2">Your sketch above is already filled into the email. Or just say hello.</p>
+<div style="display:flex;gap:14px;flex-wrap:wrap">
+<a class="btn" id="mail" href="mailto:info@clinginfotech.com">Email info@clinginfotech.com</a>
+<a class="btn ghost" href="tel:+918264469132">Call +91 82644 69132</a>
+</div>
+<div class="offices">
+<div><b>Head office, Noida</b>130-132, 2nd Floor, Wave Galleria, Wave City, NH-24, UP 201015</div>
+<div><b>Pune</b>2nd Floor, Raj Square, Pashan-Sus Rd, Pashan, Maharashtra 411021</div>
+<div><b>Moradabad</b>2/652, Avas Vikas, Buddhi Vihar, UP 244001</div>
+</div></div>
+</div>
+</main>
+
+<footer><div class="wrap">
+<span>&copy; Cling Info Tech Works Private Limited. Unofficial redesign concept.</span>
+<span><a href="https://clinginfotech.com/privacy">Privacy</a> &nbsp; <a href="https://clinginfotech.com/terms-and-condition">Terms</a> &nbsp; <a href="https://clinginfotech.com/refund-policy">Refunds</a> &nbsp; <a href="https://www.linkedin.com/company/cling-multi-solutions-pvt-ltd/">LinkedIn</a> &nbsp; <a href="https://www.instagram.com/clinginfotechworks/">Instagram</a></span>
+</div></footer>
+<a class="wa" href="https://api.whatsapp.com/send?phone=8264469132&text=Hey%20I%20am%20trying%20to%20connect%20with%20you">WhatsApp us</a>
+
+<script>
+var KINDS={"Website":[["Discover",1],["Design",2],["Build",3],["Launch",1]],
+"Mobile app":[["Discover",1],["Design",3],["Build",6],["Launch",2]],
+"ERP":[["Discover",2],["Design",2],["Build",8],["Launch",2]],
+"AI vision":[["Discover",2],["Prototype",3],["Train",5],["Launch",2]]};
+var STAGES={"Just an idea":[1,0,0,0],"Designs ready":[-1,-1,0,0],"Need to scale":[0,0,2,1]};
+var s={k:"Website",t:"Just an idea"};
+function chips(id,list,key){var el=document.getElementById(id);list.forEach(function(n){
+var b=document.createElement("button");b.className="chip";b.type="button";b.setAttribute("role","radio");b.textContent=n;
+b.onclick=function(){s[key]=n;render()};el.appendChild(b)})}
+chips("kind",Object.keys(KINDS),"k");chips("stage",Object.keys(STAGES),"t");
+function render(){
+document.querySelectorAll(".chip").forEach(function(b){var on=b.textContent===s.k||b.textContent===s.t;b.setAttribute("aria-checked",on)});
+document.querySelectorAll(".prev svg g").forEach(function(g){g.classList.toggle("on",g.dataset.k===s.k)});
+var adj=STAGES[s.t],tot=0,html="";
+var ph=KINDS[s.k].map(function(p,i){var w=Math.max(1,p[1]+adj[i]);tot+=w;return [p[0],w]});
+ph.forEach(function(p){html+='<div class="ph"><span>'+p[0]+'</span><i style="width:'+(p[1]*11)+'px"></i><b>'+p[1]+'w</b></div>'});
+document.getElementById("plan").innerHTML=html;
+document.getElementById("tot").innerHTML="About "+tot+" weeks<small>A rough guide only. Real scope and timeline come after a call.</small>";
+var msg="Hi Cling team, I want to build: "+s.k+". Stage: "+s.t+". Rough plan: "+ph.map(function(p){return p[0]+" "+p[1]+"w"}).join(", ")+" ("+tot+" weeks). Please get in touch.";
+document.getElementById("mail").href="mailto:info@clinginfotech.com?subject="+encodeURIComponent("New project: "+s.k)+"&body="+encodeURIComponent(msg);
+document.getElementById("go").onclick=function(){window.open("https://api.whatsapp.com/send?phone=918264469132&text="+encodeURIComponent(msg),"_blank","noopener");return false};
+}
+render();
+</script>
+</body>
+</html>
